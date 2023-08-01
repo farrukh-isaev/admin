@@ -1,0 +1,76 @@
+<header
+  class="flex justify-between shadow-xl items-center bg-gradient-to-r from-green-300 to-green-600 h-24 py-4"
+>
+  <button class="burger-icon m-5" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  <p
+    class="text-4xl font-bold hover:scale-105 hover:brightness-90 transition-all duration-300 hover:text-green-900"
+  >
+    Commerce Bank
+  </p>
+  <div
+    class="profile-icon relative right-0 cursor-pointer"
+    (click)="toggleUserList()"
+  >
+    <img class="w-8 h-8 rounded-full" src="favicon.ico" alt="User Profile" />
+    <span class="ml-2 font-semibold relative right-10">Пользователь</span>
+  </div>
+</header>
+
+<div
+  class="user-list hidden bg-gray-100 shadow-lg rounded-md p-4 w-44 float-right"
+  [class.hidden]="isUserListHidden"
+>
+  <ul class="">
+    <li
+      class="my-2 cursor-pointer transform transition duration-500 border-b-2 hover:border-green-700 hover:font-semibold hover:text-green-700"
+    >
+      <a routerLink="/profile">Профиль</a>
+    </li>
+    <li
+      class="my-2 cursor-pointer transform transition duration-500 border-b-2 hover:border-green-700 hover:font-semibold hover:text-green-700"
+    >
+      Настройки
+    </li>
+    <li
+      class="my-2 cursor-pointer transform transition duration-500 border-b-2 hover:border-green-700 hover:font-semibold hover:text-green-700"
+    >
+      Поддержка
+    </li>
+    <button
+      class="bg-gray-200 hover:bg-red-700 hover:text-white rounded-lg py-1 px-4 text-black transition-all duration-300"
+      (click)="logout()"
+    >
+      Выход
+    </button>
+  </ul>
+</div>
+
+<ul class="menu" [class.open]="isMenuOpen">
+  <li class="menu-close-button">
+    <button
+      class="close-button -translate-y-4 text-6xl font-bold ml-2"
+      (click)="closeMenu()"
+    >
+      X
+    </button>
+  </li>
+  <li
+    class="menu-item rounded-md cursor-pointer py-1 px-2 hover:bg-white hover:shadow-md"
+  >
+    <a routerLink="/new">Item 1</a>
+  </li>
+  <li
+    class="menu-item rounded-md cursor-pointer py-1 px-2 hover:bg-white hover:shadow-md"
+  >
+    <a routerLink="/new">Item 2</a>
+  </li>
+  <li
+    class="menu-item rounded-md cursor-pointer py-1 px-2 hover:bg-white hover:shadow-md"
+  >
+    <a routerLink="/new">Item 3</a>
+  </li>
+</ul>

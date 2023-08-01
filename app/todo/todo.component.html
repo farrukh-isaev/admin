@@ -1,0 +1,60 @@
+<div class="container">
+  <h2 class="text-center -translate-x-8 mt-7 mb-5 text-xl">To-Do List</h2>
+
+  <form class="flex" (ngSubmit)="addTodo()">
+    <div class="form-group">
+      <label class="text-lg ml-1" for="newTodo">New Task:</label>
+      <input
+        type="text"
+        class="form-control border-blue-200 py-1.5 px-3 outline-teal-300 border-solid bg-gray-100 ml-3 rounded-lg"
+        id="newTodo"
+        name="newTodo"
+        placeholder="Введите задачу"
+        [(ngModel)]="newTodoText"
+        required
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary mb-3 bg-blue-700 rounded-lg py-1 px-2 ml-5 -translate-y-1 text-blue-100 font-semibold shadow-sm shadow-gray-600 hover:text-white transition-colors"
+    >
+      Add Task
+    </button>
+  </form>
+
+  <hr />
+
+  <ul class="list-group">
+    <li
+      *ngFor="let todo of todos"
+      class="list-group-item gap-5 mt-3 border-b border-gray-200 pb-2 flex items-center"
+    >
+      <input
+        type="checkbox"
+        [(ngModel)]="todo.completed"
+        (change)="toggleComplete(todo)"
+        class="mr-2 rounded"
+      />
+
+      <span [class.completed]="todo.completed" class="flex-grow">{{
+        todo.text
+      }}</span>
+
+      
+      <button
+        class="btn text-blue-500 mr-6 hover:text-blue-700"
+        (click)="editTodo(todo)"
+      >
+        Edit
+      </button>
+
+      
+      <button
+        class="btn text-red-500 hover:text-red-700"
+        (click)="deleteTodo(todo)"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>

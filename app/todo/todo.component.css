@@ -1,0 +1,46 @@
+.completed {
+  text-decoration: line-through;
+}
+
+.btn-link {
+  padding: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #333;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.btn-link {
+  padding: 0;
+  color: blue;
+  text-decoration: underline;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
